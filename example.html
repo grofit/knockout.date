@@ -1,0 +1,25 @@
+<html>
+	<head>
+	</head>
+	<body>
+	<script src="libs/date.js" type="text/javascript"></script>
+    <script src="libs/knockout-3.2.0.min.js" type="text/javascript"></script>
+    <script src="src/knockout.date.js" type="text/javascript"></script>
+
+		<h2>Simple Example</h2>
+		<div id="some-date-without-formatter" data-bind="date: SomeDate"></div>
+		
+		<h2>Formatted Example</h2>
+		<div id="some-date-without-formatter" data-bind="date: { date: SomeDate, format: 'd MM YY' }"></div>
+		
+        <script>
+
+			function DummyViewModel()
+			{
+				this.SomeDate = ko.observable(new Date());
+			}
+
+            ko.applyBindings(new DummyViewModel());
+        </script>
+	</body>
+</html>
