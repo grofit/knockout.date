@@ -10,7 +10,11 @@
 		<div id="some-date-without-formatter" data-bind="date: SomeDate"></div>
 		
 		<h2>Formatted Example</h2>
-		<div id="some-date-without-formatter" data-bind="date: { date: SomeDate, format: 'd MM YY' }"></div>
+		<div id="some-date-with-formatter" data-bind="date: { date: SomeDate, format: 'd/MM/yy' }"></div>
+						
+		<h2>Formatted Input Example</h2>
+		<input type="text" id="some-input-date-with-formatter" data-bind="date: { date: SomeDate, format: 'dd/MM/yy - mm:ss' }"></input>
+		
 		
         <script>
 

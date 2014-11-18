@@ -5,16 +5,16 @@ ko.bindingHandlers.date = {
 
         var dateString;
 
-        if (typeof dateBinding == "string") {
+        if (typeof dateBinding == "string" || typeof dateBinding == "function") {
             dateString = ko.unwrap(dateBinding).toString();
         } else {
             dateFormat = ko.unwrap(dateBinding.format);
             dateString = ko.unwrap(dateBinding.date).toString(dateFormat);
         }
 
-        if ($(element).is("input"))
-        { $(element).val(dateString); }
+        if (element.tagName.toLowerCase() == "input")
+        { element.value = dateString; }
         else
-        { $(element).text(dateString); }
+        { element.innerHTML = dateString; }
     }
 };
